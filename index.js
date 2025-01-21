@@ -20,7 +20,10 @@ const io = socketIo(server, {
     methods: ["GET", "POST"]
   }
 });
-
+// Add this to your src/index.js
+app.get('/', (req, res) => {
+    res.json({ message: "Server is running" });
+  });
 // Middleware
 app.use(cors());
 app.use(express.json());
